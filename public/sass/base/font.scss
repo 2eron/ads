@@ -1,0 +1,243 @@
+@import "../lib/all";
+@font-face {
+  	font-family: 'IconFont';
+  	src: url('#{$path}/icomoon.eot');
+  	src: url('#{$path}/icomoon.eot?#iefix') format('embedded-opentype'),
+    	 url('#{$path}/icomoon.woff') format('woff'),
+    	 url('#{$path}/icomoon.ttf') format('truetype'),
+    	 url('#{$path}/icomoon.svg') format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+}
+.#{$baseClass} {
+    display: inline-block;
+    font-family: IconFont;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+}
+.icon-2x {
+    font-size: 2rem;
+}
+.icon-3x {
+    font-size: 3rem;
+}
+.icon-4x {
+    font-size: 4rem;
+}
+.icon-5x {
+    font-size: 5rem;
+}
+
+// icon animation
+.#{$baseClass}-rotate:hover {
+    @include rotate(180deg);
+}
+
+// font
+.#{$baseClass}-search:before{
+    content: get(search);
+}
+.#{$baseClass}-th:before{
+    content: get(th);
+}
+.#{$baseClass}-home:before{
+    content: get(home);
+}
+.#{$baseClass}-list:before{
+    content: get(list);
+}
+.#{$baseClass}-angle-double-right:before{
+    content: get(angle-double-right);
+}
+.#{$baseClass}-angle-down:before{
+    content: get(angle-down);
+}
+.#{$baseClass}-angle-right:before{
+    content: get(angle-right);
+}
+.#{$baseClass}-angle-left:before{
+    content: get(angle-left);
+}
+.#{$baseClass}-caret-down:before{
+    content: get(caret-down);
+}
+.#{$baseClass}-times-circle:before{
+    content: get(times-circle);
+}
+.#{$baseClass}-cog:before{
+    content: get(cog);
+}
+.#{$baseClass}-arrow-circle-up:before{
+    content: get(arrow-circle-up);
+}
+.#{$baseClass}-arrow-circle-o-up:before{
+    content: get(arrow-circle-o-up);
+}
+.#{$baseClass}-arrow-left:before{
+    content: get(arrow-left);
+}
+.#{$baseClass}-map-marker:before{
+    content: get(map-marker);
+}
+.#{$baseClass}-th-list:before{
+    content: get(th-list);
+}
+.#{$baseClass}-bars:before{
+    content: get(bars);
+}
+.#{$baseClass}-arrow-up:before{
+    content: get(arrow-up);
+}
+.#{$baseClass}-th-large:before{
+    content: get(th-large);
+}
+.#{$baseClass}-jpy:before{
+    content: get(jpy);
+}
+.#{$baseClass}-heart:before{
+    content: get(heart);
+}
+.#{$baseClass}-chevron-down:before{
+    content: get(chevron-down);
+}
+.#{$baseClass}-refresh:before{
+    content: get(refresh);
+}
+.#{$baseClass}-envelope:before{
+    content: get(envelope);
+}
+.#{$baseClass}-check:before{
+    content: get(check);
+}
+.#{$baseClass}-check-circle:before{
+    content: get(check-circle);
+}
+.#{$baseClass}-reply:before{
+    content: get(reply);
+}
+
+// cn icon
+.#{$baseClass}-food:before{
+    content: get(food);
+}
+.#{$baseClass}-apparel:before{
+    content: get(apparel);
+}
+.#{$baseClass}-menu-more:before{
+    content: get(menu-more);
+}
+.#{$baseClass}-mode-text:before{
+    content: get(mode-text);
+}
+.#{$baseClass}-mode-big-picture:before{
+    content: get(mode-big-picture);
+}
+.#{$baseClass}-original:before{
+    content: get(original);
+}
+.#{$baseClass}-home-goods:before{
+    content: get(home-goods);
+}
+.#{$baseClass}-goods:before{
+    content: get(goods);
+}
+.#{$baseClass}-elec-component:before{
+    content: get(elec-component);
+}
+.#{$baseClass}-transport:before{
+    content: get(transport);
+}
+.#{$baseClass}-toys:before{
+    content: get(toys);
+}
+.#{$baseClass}-tools:before{
+    content: get(tools);
+}
+.#{$baseClass}-textile:before{
+    content: get(textile);
+}
+.#{$baseClass}-sporting:before{
+    content: get(sporting);
+}
+.#{$baseClass}-daily-use:before{
+    content: get(daily-use);
+}
+.#{$baseClass}-office:before{
+    content: get(office);
+}
+.#{$baseClass}-manufacture:before{
+    content: get(manufacture);
+}
+.#{$baseClass}-lights:before{
+    content: get(lights);
+}
+.#{$baseClass}-instruments:before{
+    content: get(instruments);
+}
+.#{$baseClass}-industry:before{
+    content: get(industry);
+}
+.#{$baseClass}-health:before{
+    content: get(health);
+}
+.#{$baseClass}-furniture:before{
+    content: get(furniture);
+}
+.#{$baseClass}-energy:before{
+    content: get(energy);
+}
+.#{$baseClass}-electrical:before{
+    content: get(electrical);
+}
+.#{$baseClass}-edit:before{
+    content: get(edit);
+}
+.#{$baseClass}-decoration:before{
+    content: get(decoration);
+}
+.#{$baseClass}-consumer-electric:before{
+    content: get(consumer-electric);
+}
+.#{$baseClass}-computer:before{
+    content: get(computer);
+}
+.#{$baseClass}-chemicals:before{
+    content: get(chemicals);
+}
+.#{$baseClass}-bags:before{
+    content: get(bags);
+}
+.#{$baseClass}-auto:before{
+    content: get(auto);
+}
+.#{$baseClass}-arts:before{
+    content: get(arts);
+}
+.#{$baseClass}-mode-text-picture:before{
+    content: get(mode-text-picture);
+}
+.#{$baseClass}-print:before{
+    content: get(print);
+}
+.#{$baseClass}-safe:before{
+    content: get(safe);
+}
+.#{$baseClass}-email:before{
+    content: get(email);
+}
+.#{$baseClass}-showroom:before{
+    content: get(showroom);
+}
+.#{$baseClass}-republic:before{
+    content: get(republic);
+}
+.#{$baseClass}-briefcase:before{
+    content: get(briefcase);
+}
+.#{$baseClass}-backtop:before{
+    content: get(backtop);
+}

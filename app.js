@@ -6,14 +6,23 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var hbs = require('hbs');
+var hbs = require('./app/hbs-support');
 var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+var config = require('./config.json');
+var db = require('./app/db');
 
-var port = process.env.PORT || 3001;
+//var demoRoute = require('./routes/demo/index');
+var route = require('./app/route');
 
+var port = process.env.PORT || config.port;
+
+db.connect();
+
+hbs.init(__dirname);
 /**
  * setting
  */
@@ -24,12 +33,23 @@ app.set('view engine', 'hbs');
 /**
  * middleware
  */
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon('./public/img/favicon.png'));
-app.use(morgan('dev'));
+app.use(log4js.connectLogger(log4js.getLogger('access'), {
+    level: log4js.levels.INFO,
+    format: ':remote-addr ":method :url HTTP/:http-version" :status :content-length ":referrer" :response-time'
+}));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+
+var staticPath = config.devMode ? "public" : "dist";
+app.use(express.static(path.join(__dirname, staticPath)));
+
+/**
+ * routes
+ */
+route.route(app);
 
 /**
  * error
@@ -52,7 +72,7 @@ app.use(function (err, req, res, next) {
  * server
  */
 app.listen(port, function () {
-    console.log(morgan);
+    logger.info('Server unit ' + process.pid + ' listening on port ' + port);
 });
 
 

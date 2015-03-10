@@ -1,0 +1,8 @@
+{
+    "encoding": "utf8",
+    "port": 3001,
+    "devMode": true,
+    "app": {
+        "title": "百卓DEMO管理系统"
+    }
+}
