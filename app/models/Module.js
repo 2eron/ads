@@ -2,7 +2,7 @@ var mongo = require('mongoose');
 var Schema = mongo.Schema;
 
 var ModuleSchema = new Schema({
-    moduleName: String,
+    name: String,
     project: {
         type: Schema.ObjectId,
         ref: 'Project'

@@ -57,19 +57,7 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 }
-//                Project.findById(projectId, function (err, project) {
-//                    if (err) {
-//                        res.send(err);
-//                    }
-//                    project.modules.push(module);
-//                    project.save(function (err) {
-//                        if (err) {
-//                            res.send(err);
-//                        }
-//                    });
-//
-//                    res.send(module);
-//                });
+
 
                 res.send(module);
 

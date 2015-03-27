@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/base/base_import.css"/>
+    <link rel="stylesheet" href="/css/ads.css"/>
+    {{{block 'style'}}}
+</head>
+<body>
+
+<div class="container">
+    {{>header}}
+    <div class="content">
+        <div class="side-wrap">
+            <div class="side">
+                <ul class="side-menu">
+                    <li class="side-menu-item active"><a href="">用户管理</a></li>
+                    <li class="side-menu-item"><a href="">模块管理</a></li>
+                    <li class="side-menu-item"><a href="">项目管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-wrap">
+            <div class="main">
+                {{{ body }}}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
