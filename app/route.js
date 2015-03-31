@@ -1,27 +1,33 @@
-var router = require('express').Router();
+var express = require('express');
+var router;
 var logger = require('log4js').getLogger();
 var walk = require('walk');
 var files = [];
 
 function registerRoute(app, routes, key){
-    //routes = require('../routes/demo/index');
-    logger.info(routes);
+
+
+    // 每个路由文件重新定义router
+    router = express.Router();
+
+
+    logger.info('Module: ' + key);
     Object.keys(routes).forEach(function (method) {
         var route = routes[method];
         var type = typeof route;
-
         if (type === 'object') {
             Object.keys(route).forEach(function (path) {
 //                router[method].apply(router, [path, route[path]]);
                 router[method](path, route[path]);
-                logger.debug(path);
+                logger.info(path + ' has registered.');
+                //logger.debug('router.'+method+'("'+path+'",'+route[path].toString());
             });
         } else if (type === 'function') {
-
+            logger.info('Function');
         }
     });
-    //logger.info('Key:' + key.replace('\\', '/'));
-    app.use('/', router);
+    key = key.replace('\\', '/');
+    app.use(key, router);
 }
 
 
@@ -50,17 +56,22 @@ function route(app) {
         next();
     });
 
+    walker.on('errors', function(root, nodeStatsArray, next){
+        nodeStatsArray.forEach(function (n) {
+            console.error("[ERROR] " + n.name);
+            console.error(n.error.message || (n.error.code + ": " + n.error.path));
+        });
+        next();
+    });
+
     walker.on('end', function () {
         files.forEach(function(file){
             Object.keys(file).forEach(function(key){
                 var routes = require('../' + file[key]);
-                if(routes){
-                    registerRoute(app, routes, key);
-                }else{
-                    logger.warn('No routes found.');
-                }
+                registerRoute(app, routes, key);
             });
         });
+
     });
 
 }

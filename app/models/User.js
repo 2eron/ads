@@ -7,7 +7,11 @@ var UserSchema = new Schema({
     email: String,
     password: String,
     group: Array,
-    role: String
+    role: String,
+    state: {
+        type: Number,
+        default: 1
+    }
 });
 
 module.exports = mongo.model('User', UserSchema);

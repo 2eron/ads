@@ -1,4 +1,4 @@
-/* line 7, ../sass/common.scss */
+/* line 7, ../sass/ads.scss */
 body {
   font-family: arial, sans-serif;
   font-size: 12px;
@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* line 13, ../sass/common.scss */
+/* line 13, ../sass/ads.scss */
 a {
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
@@ -14,46 +14,86 @@ a {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-/* line 16, ../sass/common.scss */
+/* line 16, ../sass/ads.scss */
 a:link, a:visited {
   color: #06d;
 }
-/* line 19, ../sass/common.scss */
+/* line 19, ../sass/ads.scss */
 a:hover {
   text-decoration: underline;
   color: #bd2f21;
 }
 
-/* line 24, ../sass/common.scss */
+/* line 24, ../sass/ads.scss */
+h2, h3 {
+  font-weight: bold;
+}
+
+/* line 27, ../sass/ads.scss */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+/* line 30, ../sass/ads.scss */
+table th, table td {
+  padding: 8px;
+  border: 1px solid #e6e6e6;
+}
+/* line 34, ../sass/ads.scss */
+table th {
+  background-color: #f1f1f1;
+}
+
+/* line 38, ../sass/ads.scss */
+.green {
+  color: #199900;
+}
+
+/* line 41, ../sass/ads.scss */
+.red {
+  color: #bf1d22;
+}
+
+/* line 44, ../sass/ads.scss */
 .txt {
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #bbb;
   height: 14px;
   line-height: 14px;
   padding: 5px 4px;
 }
+/* line 50, ../sass/ads.scss */
+.txt:focus {
+  border-color: #999;
+}
 
-/* line 32, ../sass/common.scss */
+/* line 54, ../sass/ads.scss */
+select {
+  height: 26px;
+  outline: none;
+}
+
+/* line 59, ../sass/ads.scss */
 .header {
   overflow: hidden;
   background-color: #e74c3c;
   padding: 0 20px;
 }
 
-/* line 37, ../sass/common.scss */
+/* line 64, ../sass/ads.scss */
 .logo,
 .nav-item {
   float: left;
   font-family: arial, "Microsoft Yahei", sans-serif;
 }
-/* line 41, ../sass/common.scss */
+/* line 68, ../sass/ads.scss */
 .logo a,
 .nav-item a {
   display: block;
   height: 40px;
   line-height: 40px;
 }
-/* line 45, ../sass/common.scss */
+/* line 72, ../sass/ads.scss */
 .logo a:link, .logo a:visited, .logo a:hover,
 .nav-item a:link,
 .nav-item a:visited,
@@ -62,73 +102,73 @@ a:hover {
   text-decoration: none;
 }
 
-/* line 51, ../sass/common.scss */
+/* line 78, ../sass/ads.scss */
 .logo {
   float: left;
   width: 170px;
 }
-/* line 54, ../sass/common.scss */
+/* line 81, ../sass/ads.scss */
 .logo a {
   font-size: 20px;
   font-weight: bold;
 }
 
-/* line 59, ../sass/common.scss */
+/* line 86, ../sass/ads.scss */
 .nav-lst {
   float: left;
 }
 
-/* line 62, ../sass/common.scss */
+/* line 89, ../sass/ads.scss */
 .nav-item {
   float: left;
 }
-/* line 64, ../sass/common.scss */
+/* line 91, ../sass/ads.scss */
 .nav-item a {
   padding: 0 20px;
   font-size: 14px;
 }
-/* line 67, ../sass/common.scss */
+/* line 94, ../sass/ads.scss */
 .nav-item a:hover {
   background-color: #e43725;
 }
-/* line 72, ../sass/common.scss */
+/* line 99, ../sass/ads.scss */
 .nav-item.active a {
   background-color: #c0392b;
 }
 
-/* line 77, ../sass/common.scss */
+/* line 104, ../sass/ads.scss */
 .log-in,
 .log-form {
   float: right;
 }
 
-/* line 81, ../sass/common.scss */
+/* line 108, ../sass/ads.scss */
 .log-in {
   color: #ccc;
   margin-top: 12px;
   display: none;
 }
-/* line 85, ../sass/common.scss */
+/* line 112, ../sass/ads.scss */
 .log-in a, .log-in span {
   margin-left: 10px;
 }
-/* line 89, ../sass/common.scss */
+/* line 116, ../sass/ads.scss */
 .log-in a:link, .log-in a:visited, .log-in a:hover {
   color: #fff;
 }
 
-/* line 94, ../sass/common.scss */
+/* line 121, ../sass/ads.scss */
 .log-form {
   margin-top: 7px;
 }
-/* line 96, ../sass/common.scss */
+/* line 123, ../sass/ads.scss */
 .log-form .txt {
   float: left;
   margin-right: 10px;
   border-color: #c0392b;
 }
 
-/* line 102, ../sass/common.scss */
+/* line 129, ../sass/ads.scss */
 .log-btn {
   float: left;
   padding: 0 10px;
@@ -149,7 +189,7 @@ a:hover {
   height: 24px;
   line-height: 24px;
 }
-/* line 114, ../sass/common.scss */
+/* line 141, ../sass/ads.scss */
 .log-btn:hover {
   background-image: -moz-linear-gradient(top, #bd2f21 100%, #ca3323 0);
   background-image: -webkit-linear-gradient(top, #bd2f21 100%, #ca3323 0);
@@ -157,7 +197,7 @@ a:hover {
   background-image: linear-gradient(to bottom, #bd2f21 100%, #ca3323 0);
 }
 
-/* line 119, ../sass/common.scss */
+/* line 146, ../sass/ads.scss */
 .side-wrap {
   width: 190px;
   position: fixed;
@@ -174,52 +214,118 @@ a:hover {
   border-right: 1px solid #d0d0d0;
 }
 
-/* line 130, ../sass/common.scss */
+/* line 157, ../sass/ads.scss */
 .side {
   padding: 15px 0;
 }
 
-/* line 135, ../sass/common.scss */
+/* line 162, ../sass/ads.scss */
 .side-menu-item a {
   display: block;
   padding: 10px 20px;
   font-size: 14px;
 }
-/* line 139, ../sass/common.scss */
+/* line 166, ../sass/ads.scss */
 .side-menu-item a:link, .side-menu-item a:visited {
   color: #666;
 }
-/* line 142, ../sass/common.scss */
+/* line 169, ../sass/ads.scss */
 .side-menu-item a:hover {
   text-decoration: none;
   background-color: #ddd;
   color: #333;
 }
-/* line 147, ../sass/common.scss */
+/* line 174, ../sass/ads.scss */
 .active .side-menu-item a {
   background-color: #fff;
 }
-/* line 152, ../sass/common.scss */
+/* line 179, ../sass/ads.scss */
 .side-menu-item.active a {
   margin-right: -1px;
   border-top: 1px solid #d0d0d0;
   border-bottom: 1px solid #d0d0d0;
 }
-/* line 156, ../sass/common.scss */
+/* line 183, ../sass/ads.scss */
 .side-menu-item.active a:link, .side-menu-item.active a:visited, .side-menu-item.active a:hover {
   color: #333;
 }
-/* line 159, ../sass/common.scss */
+/* line 186, ../sass/ads.scss */
 .side-menu-item.active a, .side-menu-item.active a:hover {
   background-color: #fff;
 }
 
-/* line 167, ../sass/common.scss */
+/* line 195, ../sass/ads.scss */
+.tb-data tr:hover td {
+  background-color: aliceblue;
+}
+
+/* line 200, ../sass/ads.scss */
+.tb-form {
+  width: 600px;
+}
+/* line 202, ../sass/ads.scss */
+.tb-form th {
+  text-align: right;
+  line-height: 26px;
+}
+
+/* line 207, ../sass/ads.scss */
+.submit {
+  padding: 10px 0;
+}
+
+/* line 210, ../sass/ads.scss */
+.btn {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 15px;
+  border-radius: 3px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* line 219, ../sass/ads.scss */
+.btn-info {
+  color: #fff;
+  background-color: #2480fa;
+}
+
+/* line 223, ../sass/ads.scss */
+.btn-primary {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+/* line 228, ../sass/ads.scss */
 .main-wrap {
   padding-left: 190px;
 }
 
-/* line 170, ../sass/common.scss */
+/* line 231, ../sass/ads.scss */
 .main {
-  padding: 20px;
+  padding: 20px 30px;
+}
+
+/* line 234, ../sass/ads.scss */
+.main-hd {
+  margin-bottom: 15px;
+}
+/* line 236, ../sass/ads.scss */
+.main-hd h2 {
+  font-size: 20px;
+}
+
+/* line 240, ../sass/ads.scss */
+.sub-hd {
+  margin-bottom: 5px;
+}
+/* line 242, ../sass/ads.scss */
+.sub-hd h3 {
+  font-weight: bold;
+}
+
+/* line 246, ../sass/ads.scss */
+.section {
+  margin-bottom: 20px;
 }

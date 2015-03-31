@@ -9,7 +9,7 @@ module.exports = {
             res.render('demo/index', {
                 layout: 'layout/default',
                 page: {
-                    title: 'index'
+                    title: 'demo'
                 }
             });
         },
