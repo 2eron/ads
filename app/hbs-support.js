@@ -80,7 +80,8 @@ exports.init = function(dirname) {
     };
 
     var extenders = [
-        require('./helpers/block')
+        require('./helpers/block'),
+        require('./helpers/module')
     ];
 
     extenders.forEach(function(helper) {

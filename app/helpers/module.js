@@ -6,8 +6,7 @@ var hbs = require('hbs');
  */
 
 module.exports = {
-    'script': function (src, options) {
-        console.log(src);
+    'script': function (src) {
         return new hbs.SafeString(
             '<script type="text/javascript" src="' + src + '"></script>'
         );
