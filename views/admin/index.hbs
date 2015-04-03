@@ -81,6 +81,8 @@
         </tbody>
     </table>
     <div class="submit"><span class="btn btn-primary">提交</span></div>
+    <span data-bind="text: firstName"></span>
+    <input type="text" data-bind="value: firstName"/>
 </div>
 {{#extend 'script'}}
     {{module 'index'}}
