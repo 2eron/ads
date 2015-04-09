@@ -1,0 +1,47 @@
+<!--admin-->
+<div class="main-hd">
+    <h2>岗位管理</h2>
+</div>
+
+<div class="section">
+    <table class="tb-data tb-auto">
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <div class="sub-hd">
+        <h3>新增岗位</h3>
+    </div>
+    <form data-bind="submit: addPost">
+    <table class="tb-form">
+        <colgroup>
+            <col width="20%"/>
+            <col width="80%"/>
+        </colgroup>
+        <tbody>
+        <tr>
+            <th>名称</th>
+            <td>
+                <input class="txt" type="text" name="" id="" data-bind="value: name"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="submit"><button type="submit" class="btn btn-primary">提交</button></div>
+    </form>
+</div>
+{{#extend 'script'}}
+    {{module 'admin/post'}}
+{{/extend}}

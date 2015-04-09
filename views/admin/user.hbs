@@ -10,7 +10,7 @@
             <th>姓名</th>
             <th>工号</th>
             <th>邮箱</th>
-            <th>职位</th>
+            <th>岗位</th>
             <th>角色</th>
             <th>状态</th>
             <th>&nbsp;</th>
@@ -27,10 +27,11 @@
             <td>
                 {{#if state}}
                     <span class="green">启用</span>
+                    <a href="">禁用</a>
                 {{^}}
                     <span class="red">禁用</span>
+                    <a href="">启用</a>
                 {{/if}}
-
             </td>
             <td></td>
         </tr>
@@ -43,6 +44,7 @@
     <div class="sub-hd">
         <h3>新增用户</h3>
     </div>
+    <form data-bind="submit: submit">
     <table class="tb-form">
         <colgroup>
             <col width="20%"/>
@@ -51,38 +53,39 @@
         <tbody>
         <tr>
             <th>姓名</th>
-            <td><input class="txt" type="text" name="" id=""/></td>
+            <td>
+                <input class="txt" type="text" name="" id="" data-bind="value: name"/>
+                <div class="error" data-bind="visible: name.hasError, validationMessage: name"></div>
+            </td>
         </tr>
         <tr>
             <th>工号</th>
-            <td><input class="txt" type="text" name="" id=""/></td>
+            <td><input class="txt" type="text" name="" id="" data-bind="value: workNumber"/></td>
         </tr>
         <tr>
             <th>邮箱</th>
-            <td><input class="txt" type="text" name="" id=""/></td>
+            <td><input class="txt" type="text" name="" id="" data-bind="value: email"/></td>
         </tr>
         <tr>
-            <th>职位</th>
+            <th>岗位</th>
             <td>
-                <select name="" id="">
-                    <option value="">请选择</option>
-                </select>
+                <div class="choose-group">
+                    {{#each data.post}}
+                    <label><input class="chb" type="checkbox" name="" id="" value="{{_id}}" data-bind="checked: post"/>{{name}}</label>
+                    {{/each}}
+                </div>
             </td>
         </tr>
         <tr>
             <th>角色</th>
             <td>
-                <select name="" id="">
-                    <option value="">普通用户</option>
-                    <option value="">管理员</option>
-                </select>
+                <select name="" id="" data-bind="value: role, options: roleOptions, optionsCaption: '请选择' "></select>
             </td>
         </tr>
         </tbody>
     </table>
-    <div class="submit"><span class="btn btn-primary">提交</span></div>
-    <span data-bind="text: firstName"></span>
-    <input type="text" data-bind="value: firstName"/>
+    <div class="submit"><button type="submit" class="btn btn-primary">提交</button></div>
+    </form>
 </div>
 {{#extend 'script'}}
     {{module 'index'}}

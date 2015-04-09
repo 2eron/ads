@@ -76,6 +76,13 @@ exports.init = function(dirname) {
         },
         'alt': function(primary, secondary, options) {
             return primary ? primary : secondary;
+        },
+        'altClass': function(first, second, returnValue){
+            if(first == second){
+                return returnValue;
+            }else{
+                return '';
+            }
         }
     };
 

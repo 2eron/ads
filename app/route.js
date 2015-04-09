@@ -9,8 +9,7 @@ function registerRoute(app, routes, key){
 
     // 每个路由文件重新定义router
     router = express.Router();
-
-
+    key = key.replace('\\', '/');
     logger.info('Module: ' + key);
     Object.keys(routes).forEach(function (method) {
         var route = routes[method];
@@ -19,14 +18,13 @@ function registerRoute(app, routes, key){
             Object.keys(route).forEach(function (path) {
 //                router[method].apply(router, [path, route[path]]);
                 router[method](path, route[path]);
-                logger.info(path + ' has registered.');
+                logger.info(key + path + ' has registered.');
                 //logger.debug('router.'+method+'("'+path+'",'+route[path].toString());
             });
         } else if (type === 'function') {
             logger.info('Function');
         }
     });
-    key = key.replace('\\', '/');
     app.use(key, router);
 }
 

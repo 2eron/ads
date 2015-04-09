@@ -1,6 +1,6 @@
-define(['jquery.min', 'knockout'], function(jquery, ko){
+define(['jquery', 'knockout'], function(jquery, ko){
     return {
-        'jquery': jquery,
-        'ko': ko
+        jquery: jquery,
+        ko: ko
     }
 });

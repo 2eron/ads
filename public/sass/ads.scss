@@ -35,14 +35,21 @@ table{
         background-color: $bgGray;
     }
 }
+.tb-auto{
+    width: auto;
+}
 .green{
     color: #199900;
 }
 .red{
     color: #bf1d22;
 }
-.txt{
+input,button,select,area{
     outline: none;
+    margin: 0;
+    vertical-align: middle;
+}
+.txt{
     border: 1px solid #bbb;
     height: 14px;
     line-height: 14px;
@@ -53,7 +60,34 @@ table{
 }
 select{
     height: 26px;
-    outline: none;
+}
+button{
+    border: none;
+}
+.btn{
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 15px;
+    border-radius: 3px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.btn-info{
+    color: #fff;
+    background-color: #2480fa;
+}
+.btn-primary{
+    background-color: #c0392b;
+    color: #fff;
+}
+.choose-group{
+    label{
+        margin-right: 15px;
+    }
+    input{
+        margin-right: 3px;
+    }
 }
 // header
 .header{
@@ -207,23 +241,7 @@ select{
 .submit{
     padding: 10px 0;
 }
-.btn{
-    display: inline-block;
-    height: 26px;
-    line-height: 26px;
-    padding: 0 15px;
-    border-radius: 3px;
-    background-color: #ddd;
-    cursor: pointer;
-}
-.btn-info{
-    color: #fff;
-    background-color: #2480fa;
-}
-.btn-primary{
-    background-color: #c0392b;
-    color: #fff;
-}
+
 // main
 .main-wrap{
     padding-left: $sideWidth;

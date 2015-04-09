@@ -6,7 +6,7 @@ var UserSchema = new Schema({
     workNumber: String,
     email: String,
     password: String,
-    group: Array,
+    post: [Schema.ObjectId],
     role: String,
     state: {
         type: Number,

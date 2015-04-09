@@ -15,9 +15,10 @@
         <div class="side-wrap">
             <div class="side">
                 <ul class="side-menu">
-                    <li class="side-menu-item active"><a href="">用户管理</a></li>
-                    <li class="side-menu-item"><a href="">模块管理</a></li>
-                    <li class="side-menu-item"><a href="">项目管理</a></li>
+                    <li class="side-menu-item {{altClass data.page 'user' 'active' }}"><a href="/admin/user">用户管理</a></li>
+                    <li class="side-menu-item {{altClass data.page 'module' 'active' }}"><a href="">模块管理</a></li>
+                    <li class="side-menu-item {{altClass data.page 'project' 'active' }}"><a href="">项目管理</a></li>
+                    <li class="side-menu-item {{altClass data.page 'post' 'active' }}"><a href="/admin/post">岗位管理</a></li>
                 </ul>
             </div>
         </div>
