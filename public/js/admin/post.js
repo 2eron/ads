@@ -14,7 +14,7 @@ require(['require', 'lib', 'knockout.validation.min'], function(require, lib){
         type: 'get',
         url: '/api/post/',
         success: function(data){
-            //
+            posts.push(data.name);
         }
     });
 
@@ -25,6 +25,17 @@ require(['require', 'lib', 'knockout.validation.min'], function(require, lib){
             console.log(this.name());
 
             // submit data
+            $.ajax({
+                type: 'post',
+                url: '/api/post/',
+                data: {
+                    name: this.name()
+                },
+                success: function(data){
+                    //
+                    var data = data;
+                }
+            })
 
         }
     }

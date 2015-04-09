@@ -12,8 +12,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td></td>
+        <tr data-bind="foreach: posts">
+            <td data-bind="text: $data.name"></td>
             <td></td>
         </tr>
         </tbody>
