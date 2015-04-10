@@ -1,14 +1,18 @@
 var Post = require('../../app/models/Post');
 
+function getPosts(res){
+    Post.find(function(err, posts){
+        if(err){
+            res.send('err');
+        }
+        res.json(posts);
+    });
+}
+
 module.exports = {
     get: {
         '/': function(req, res){
-            Post.find(function(err, posts){
-                if(err){
-                    res.send(err);
-                }
-                res.json(posts);
-            });
+            getPosts(res);
         }
     },
     post: {
@@ -19,14 +23,36 @@ module.exports = {
             post.save(function(err){
                 if(err){
                     res.send(err);
-                }else{
-                    Post.find(function(err, posts){
-                        if(err){
-                            res.send(err);
-                        }
-                        res.json(posts);
-                    });
                 }
+                getPosts(res);
+            });
+        },
+        '/:postId': function(req, res){
+            var postId = req.params.postId;
+            Post.remove({
+                _id: postId
+            }, function(err){
+                if(err){
+                    res.send(err);
+                }
+                getPosts(res);
+            });
+        }
+    },
+    put: {
+        '/:postId': function(req, res){
+            var postId = req.params.postId;
+            Post.update({
+                _id: postId
+            }, {
+                $set: {
+                    name: req.body.name
+                }
+            }, function(err){
+                if(err){
+                    res.send(err);
+                }
+                getPosts(res);
             });
         }
     }

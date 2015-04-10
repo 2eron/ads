@@ -321,35 +321,40 @@ button {
   padding: 10px 0;
 }
 
-/* line 246, ../sass/ads.scss */
+/* line 245, ../sass/ads.scss */
+.td-ope a, .td-ope span {
+  margin: 0 5px;
+}
+
+/* line 250, ../sass/ads.scss */
 .main-wrap {
   padding-left: 190px;
 }
 
-/* line 249, ../sass/ads.scss */
+/* line 253, ../sass/ads.scss */
 .main {
   padding: 20px 30px;
 }
 
-/* line 252, ../sass/ads.scss */
+/* line 256, ../sass/ads.scss */
 .main-hd {
   margin-bottom: 15px;
 }
-/* line 254, ../sass/ads.scss */
+/* line 258, ../sass/ads.scss */
 .main-hd h2 {
   font-size: 20px;
 }
 
-/* line 258, ../sass/ads.scss */
+/* line 262, ../sass/ads.scss */
 .sub-hd {
   margin-bottom: 5px;
 }
-/* line 260, ../sass/ads.scss */
+/* line 264, ../sass/ads.scss */
 .sub-hd h3 {
   font-weight: bold;
 }
 
-/* line 264, ../sass/ads.scss */
+/* line 268, ../sass/ads.scss */
 .section {
   margin-bottom: 20px;
 }

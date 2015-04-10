@@ -241,7 +241,11 @@ button{
 .submit{
     padding: 10px 0;
 }
-
+.td-ope{
+    a, span{
+        margin: 0 5px;
+    }
+}
 // main
 .main-wrap{
     padding-left: $sideWidth;

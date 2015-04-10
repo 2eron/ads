@@ -24,7 +24,7 @@
             <td>{{ email }}</td>
             <td>{{ group }}</td>
             <td>{{ role }}</td>
-            <td>
+            <td class="td-ope">
                 {{#if state}}
                     <span class="green">启用</span>
                     <a href="">禁用</a>
@@ -33,7 +33,9 @@
                     <a href="">启用</a>
                 {{/if}}
             </td>
-            <td></td>
+            <td class="td-ope">
+                <a href="">删除</a><a href="">编辑</a>
+            </td>
         </tr>
         {{/each}}
         </tbody>

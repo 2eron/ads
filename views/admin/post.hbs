@@ -5,16 +5,23 @@
 
 <div class="section">
     <table class="tb-data tb-auto">
+        <colgroup>
+            <col width="100"/>
+            <col/>
+        </colgroup>
         <thead>
         <tr>
             <th>名称</th>
             <th>操作</th>
         </tr>
         </thead>
-        <tbody>
-        <tr data-bind="foreach: posts">
-            <td data-bind="text: $data.name"></td>
-            <td></td>
+        <tbody data-bind="foreach: posts">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td class="td-ope">
+                <a href="#" data-bind="click: $parent.delete">删除</a>
+                <a href="" data-bind="click: $parent.edit">编辑</a>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -24,7 +31,7 @@
     <div class="sub-hd">
         <h3>新增岗位</h3>
     </div>
-    <form data-bind="submit: addPost">
+    <form data-bind="submit: submit">
     <table class="tb-form">
         <colgroup>
             <col width="20%"/>
