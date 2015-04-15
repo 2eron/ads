@@ -9,6 +9,15 @@ require(['require', 'lib', 'knockout.validation.min'], function(require, lib){
     });
     console.log(ko.validation.rules);
 
+    // get post list
+    var posts = [];
+    $.ajax({
+        type: 'get',
+        url: '/api/post/',
+        success: function (data) {
+            viewModel.posts(data);
+        }
+    });
 
     var viewModel = {
         name: ko.observable().extend({
@@ -16,9 +25,17 @@ require(['require', 'lib', 'knockout.validation.min'], function(require, lib){
                 message: '请输入姓名！'
             }
         }),
-        workNumber: ko.observable(),
-        email: ko.observable(),
-        post: ko.observableArray([]),
+        workNumber: ko.observable().extend({
+            required: {
+                message: '请输入工号！'
+            }
+        }),
+        email: ko.observable().extend({
+            required: {
+                message: '请输入邮箱！'
+            }
+        }),
+        posts: ko.observableArray(posts),
         role: ko.observable(),
         roleOptions: ['管理员', '普通用户'],
 

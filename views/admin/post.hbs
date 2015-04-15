@@ -41,7 +41,10 @@
         <tr>
             <th>名称</th>
             <td>
-                <input class="txt" type="text" name="" id="" data-bind="value: name"/>
+                <div class="form-fluid">
+                    <input class="txt" type="text" name="" id="" data-bind="value: name"/>
+                    <div class="error" data-bind="validationMessage: name"></div>
+                </div>
             </td>
         </tr>
         </tbody>

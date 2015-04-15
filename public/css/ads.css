@@ -326,35 +326,55 @@ button {
   margin: 0 5px;
 }
 
-/* line 250, ../sass/ads.scss */
+/* line 249, ../sass/ads.scss */
+.error {
+  line-height: 1.8;
+  color: #bf1d22;
+}
+
+/* line 253, ../sass/ads.scss */
+.form-fluid {
+  overflow: hidden;
+}
+/* line 255, ../sass/ads.scss */
+.form-fluid .txt, .form-fluid .error {
+  float: left;
+}
+/* line 258, ../sass/ads.scss */
+.form-fluid .error {
+  margin-left: 10px;
+  line-height: 26px;
+}
+
+/* line 264, ../sass/ads.scss */
 .main-wrap {
   padding-left: 190px;
 }
 
-/* line 253, ../sass/ads.scss */
+/* line 267, ../sass/ads.scss */
 .main {
   padding: 20px 30px;
 }
 
-/* line 256, ../sass/ads.scss */
+/* line 270, ../sass/ads.scss */
 .main-hd {
   margin-bottom: 15px;
 }
-/* line 258, ../sass/ads.scss */
+/* line 272, ../sass/ads.scss */
 .main-hd h2 {
   font-size: 20px;
 }
 
-/* line 262, ../sass/ads.scss */
+/* line 276, ../sass/ads.scss */
 .sub-hd {
   margin-bottom: 5px;
 }
-/* line 264, ../sass/ads.scss */
+/* line 278, ../sass/ads.scss */
 .sub-hd h3 {
   font-weight: bold;
 }
 
-/* line 268, ../sass/ads.scss */
+/* line 282, ../sass/ads.scss */
 .section {
   margin-bottom: 20px;
 }

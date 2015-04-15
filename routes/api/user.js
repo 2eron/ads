@@ -19,7 +19,7 @@ module.exports = {
                     res.send(err);
                 }
                 res.json({ message: 1 });
-            })
+            });
         }
     }
 }

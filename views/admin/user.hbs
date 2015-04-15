@@ -56,25 +56,35 @@
         <tr>
             <th>姓名</th>
             <td>
-                <input class="txt" type="text" name="" id="" data-bind="value: name"/>
-                <div class="error" data-bind="visible: name.hasError, validationMessage: name"></div>
+                <div class="form-fluid">
+                    <input class="txt" type="text" name="" id="" data-bind="value: name"/>
+                    <div class="error" data-bind="visible: name.hasError, validationMessage: name"></div>
+                </div>
             </td>
         </tr>
         <tr>
             <th>工号</th>
-            <td><input class="txt" type="text" name="" id="" data-bind="value: workNumber"/></td>
+            <td>
+                <div class="form-fluid">
+                    <input class="txt" type="text" name="" id="" data-bind="value: workNumber"/>
+                    <div class="error" data-bind="validationMessage: workNumber"></div>
+                </div>
+            </td>
         </tr>
         <tr>
             <th>邮箱</th>
-            <td><input class="txt" type="text" name="" id="" data-bind="value: email"/></td>
+            <td>
+                <div class="form-fluid">
+                    <input class="txt" type="text" name="" id="" data-bind="value: email"/>
+                    <div class="error" data-bind="validationMessage: email"></div>
+                </div>
+            </td>
         </tr>
         <tr>
             <th>岗位</th>
             <td>
-                <div class="choose-group">
-                    {{#each data.post}}
-                    <label><input class="chb" type="checkbox" name="" id="" value="{{_id}}" data-bind="checked: post"/>{{name}}</label>
-                    {{/each}}
+                <div class="choose-group" data-bind="foreach: posts">
+                    <label><input class="chb" type="checkbox" name="" id="" value="" data-bind="checked: posts, value: _id"/></label>
                 </div>
             </td>
         </tr>
@@ -90,5 +100,5 @@
     </form>
 </div>
 {{#extend 'script'}}
-    {{module 'index'}}
+    {{module 'admin/user'}}
 {{/extend}}

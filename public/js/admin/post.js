@@ -5,6 +5,8 @@ require(['require', 'lib', 'knockout.validation.min'], function (require, lib) {
     require('knockout.validation.min');
 
     ko.validation.init({
+        registerExtenders: true,
+        messagesOnModified: true,
         insertMessages: false
     });
 
@@ -22,33 +24,42 @@ require(['require', 'lib', 'knockout.validation.min'], function (require, lib) {
         isEdit: ko.observable(false),
         editID: ko.observable(),
         posts: ko.observableArray(posts),
-        name: ko.observable(),
+        name: ko.observable().extend({
+            required: {
+                message: '请输入岗位名称！'
+            }
+        }),
         submit: function () {
-            if (viewModel.isEdit()) {
-                $.ajax({
-                    type: 'put',
-                    url: '/api/post/' + viewModel.editID(),
-                    data: {
-                        name: viewModel.name
-                    },
-                    success: function (data) {
-                        viewModel.posts(data);
-                        viewModel.isEdit(false);
-                        viewModel.name('');
-                    }
-                });
-            } else {
-                // submit data
-                $.ajax({
-                    type: 'post',
-                    url: '/api/post/',
-                    data: {
-                        name: this.name()
-                    },
-                    success: function (data) {
-                        viewModel.posts(data);
-                    }
-                })
+            console.log(viewModel.errors())
+            if (viewModel.errors().length == 0) {
+                if (viewModel.isEdit()) {
+                    $.ajax({
+                        type: 'put',
+                        url: '/api/post/' + viewModel.editID(),
+                        data: {
+                            name: viewModel.name
+                        },
+                        success: function (data) {
+                            viewModel.posts(data);
+                            viewModel.isEdit(false);
+                            viewModel.name('');
+                        }
+                    });
+                } else {
+                    // submit data
+                    $.ajax({
+                        type: 'post',
+                        url: '/api/post/',
+                        data: {
+                            name: this.name()
+                        },
+                        success: function (data) {
+                            viewModel.posts(data);
+                        }
+                    });
+                }
+            }else{
+                viewModel.errors.showAllMessages();
             }
 
         },
@@ -67,6 +78,9 @@ require(['require', 'lib', 'knockout.validation.min'], function (require, lib) {
             });
         }
     };
+
+    viewModel.errors = ko.validation.group(viewModel);
+
     ko.applyBindings(viewModel);
 
 

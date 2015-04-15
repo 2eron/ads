@@ -246,6 +246,19 @@ button{
         margin: 0 5px;
     }
 }
+.error{
+    color: #bf1d22;
+}
+.form-fluid{
+    overflow: hidden;
+    .txt, .error{
+        float: left;
+    }
+    .error{
+        margin-left: 10px;
+        line-height: 26px;
+    }
+}
 // main
 .main-wrap{
     padding-left: $sideWidth;
